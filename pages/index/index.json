@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "grid":"mini-ddui/es/grid/index"
+  },
+  "window": {
+    "defaultTitle": "首页"
+  }
+}

@@ -1,0 +1,89 @@
+<view class="page">
+<view class="top">
+  
+
+  <view class="page-section-title">
+    <!-- 头部选择区 -->
+    <flex>
+    <!-- 选择区域 -->
+      <flex-item>
+        <picker onChange="districtChange" value="{{indexDistrict}}" range="{{arrayDistrict}}">
+        <view >
+          <view class="am-button top-btn sel-btn">{{arrayDistrict[indexDistrict]}}</view>
+        </view>
+        </picker>
+      </flex-item>
+      <flex-item>
+        <view class="am-button top-btn date-btns" onTap="datePicker">{{year}}年{{lastMonth}}月</view>
+      </flex-item>
+      <flex-item>
+      <!-- 选择状态 -->
+        <picker onChange="statusChange" value="{{indexStatus}}" range="{{arrayStatus}}">
+        <view >
+          <view class="am-button top-btn sel-btn">{{arrayStatus[indexStatus]}}</view>
+        </view>
+      </picker>
+      </flex-item>
+    </flex>
+  </view>
+    <!-- 中部显示状态 -->
+  <view>
+    <flex class="middle-view">
+      <flex-item><view class="middle-row"> 总计 </view></flex-item>
+      <flex-item><view class="middle-row"> 已解决 </view></flex-item>
+      <flex-item><view class="middle-row"> 未解决 </view></flex-item>
+  </flex>
+   <flex class="middle-view">
+      <flex-item><view class="middle-row"> {{totalQty}} </view></flex-item>
+      <flex-item><view class="middle-row"> {{totalQty-notClosedQty}} </view></flex-item>
+      <flex-item><view class="middle-row"> {{notClosedQty}} </view></flex-item>
+  </flex> 
+  </view>  
+<!-- 完成率进度条 -->
+  <view class="progress">
+  <view>
+    完成率
+  </view>
+  <progress percent="{{closeRate}}" activeColor="#6abf47" backgroundColor="#f4333c" show-info stroke-width="8" />
+  </view>
+  </view>
+  
+
+  <!-- 数据展示区 -->
+  
+  <view class="page-content">
+  
+    <scroll-view scroll-x="true"  onScrollToUpper="upper" scroll-into-view="{{toView}}" >
+        <view class="tr bg-w ">
+          <view class="th">序号</view>
+          <view class="th th1" id="section">区域名称</view>
+          <view class="th th2">问题图片</view>
+          <view class="th th3">原因</view>
+          <view class="th th3">时间节点</view>
+          <view class="th th2">整改后图片</view>
+          
+        </view>
+        <view class="tab-row">
+          <view a:for="{{totalList}}" a:for-item="i" >
+            <view  class="{{index % 2 == 0?'tr bg-g':'tr'}}" data-no="{{i.s6_no}}">
+              <view class="td ">{{index+1}}</view>
+              <view class="td td1">{{i.district}}</view>
+              <view class="td td2">
+                  <!-- <view class="page-img" onTap="onTap" >
+                  </view> -->
+                    <image class="image" onTap="previewImage" data-img="{{i.picture}}" mode="aspectFill" src="{{src}}{{i.picture}}"/>
+              </view>
+              <view class="td td3">{{i.problem}}</view>
+              <view class="td td3">{{i.date}}</view>
+              <view class="td td2" a:if="{{i.pic_after_ck}}">
+                  <image class="image" onTap="previewImage" data-img="{{i.pic_after_ck}}" mode="aspectFill" src="{{src}}{{i.pic_after_ck}}"/>
+              </view>
+              <view class="td td2" a:else onTap="upLoadPic" data-item="{{i}}"><button type="default" size="mini" plain>点击上传图片</button></view>
+              
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  
+<view >

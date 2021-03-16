@@ -1,0 +1,12 @@
+<view class='com-selectBox'>
+    <view class='com-sContent' onTap='selectToggle'>
+        <view class='com-sTxt'>{{nowText}}</view>
+        <view animation="{{animationData}}" class='com-sImg'>
+          <image src='../../../image/down.png' style="width:100%;height:100%;margin-bottom:4px;"/>
+        </view>
+        
+    </view>
+    <view class='com-sList' a:if="{{selectShow}}">
+        <view a:for="{{array}}" data-index="{{index}}" a:key='' class='com-sItem' onTap='setText'>{{item.name}}</view>
+    </view>
+</view>

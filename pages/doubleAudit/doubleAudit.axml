@@ -1,0 +1,167 @@
+<view class="pageall">
+<tabs
+    tabs="{{tabs}}"
+    tabsName="activeTab"
+    onTabClick="handleTabClick"
+    onChange="handleTabChange"
+    onPlusClick="handlePlusClick"
+    activeTab="{{activeTab}}"
+    showPlus="{{hasPlus}}"
+    swipeable="{{false}}"
+    capsule="{{typeCapsule}}"
+    hasSubTitle="{{typeHasSubTitle}}"
+    tabBarUnderlineWidth="20px"
+  >
+  <block a:for="{{tabs}}">
+    <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:if="{{index === 0}}">
+    <scroll-view style="height: 100vh;" 
+		scroll-y onScrollToLower="onScrollToLower" 
+		enable-back-to-top="true">
+		<view class="table" >
+    <view class="tr bg-w">
+      <view class="th1 th">序号</view>
+      <view class="th2 th">发起日期</view>
+      <view class="th3 th">问题区域</view>
+      <view class="th4 th">问题图片</view>
+    </view>
+    <view class="view-top">
+    <block a:for="{{listToBeChecked}}" >
+
+      <view onTap="onItemClick" class="{{index % 2 == 0?'tr bg-g':'tr'}}" data-id="{{item.id}}">
+        <view class="td td1">{{index+1}}</view>
+        <view class="td td2">{{item.create_date}}</view>
+        <view class="td td3">{{item.district}}</view>
+        <view class="td td4">
+          <view class="img" onTap="previewImage" data-img="{{item.picture}}">
+           <image mode="scaleToFill" src="{{imgSrc}}{{item.picture}}" class="pics"/>
+      </view>
+        </view>
+      </view>
+
+    </block>
+    </view>
+      </view>
+          <view class="listempty" a:if="{{getHandleListIsEmpty}}">
+              无待处理问题
+          </view>
+        </scroll-view>
+		</tab-content>
+    <!-- 处理图片审核 -->
+    <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:esle-if="{{index === 1}}">
+        <scroll-view enable-back-to-top="true">
+            <view class="table" >
+            <view class="tr bg-w">
+              <view class="th1 th">序号</view>
+              <view class="th2 th">发起日期</view>
+              <view class="th3 th">问题区域</view>
+              <view class="th4 th">处理后图片</view>
+              <view class="th3 th">审核</view>
+            </view>
+            <view class="view-top">
+            <block a:for="{{doubleAuditListAfterHandle}}" >
+              <view  class="{{index % 2 == 0?'tr bg-g':'tr'}}" >
+                <view class="td td1">{{index+1}}</view>
+                <view class="td td2">{{item.first_req_date}}</view>
+                <view class="td td3">{{item.district}}</view>
+                <view class="td td4">
+                  <view class="img" onTap="previewImage" data-img="{{item.pic_after_ck}}">
+                  <image mode="scaleToFill" src="{{imgSrc}}{{item.pic_after_ck}}" class="pics"/>
+                  </view>
+                </view>
+                <view class="td td3" onTap="openModal5" data-id="{{item.id}}"><button type="default" size="mini" plain>审核</button></view>
+
+              </view>
+
+            </block>
+            </view>
+              </view>
+          <view class="listempty" a:if="{{doubleAuditListAfterHandle.length == 0}}">
+              无待审核问题
+          </view>
+        </scroll-view>
+    </tab-content>
+
+    <!-- 提交数据 -->
+
+    <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:esle>
+        <!-- 以下方案为每条记录可以在一个区域上传最多9张照片 -->
+        <scroll-view scroll-x="true">
+          <view class="table1 impeach" >
+          <view class="exchange">
+            <button size="mini" type="primary" onTap="addData">增加数据</button>
+            <button size="mini" type="primary" onTap="submitData">提交数据</button>
+          </view>
+            <view class="trr2 bg-w1">
+              <view class="thh3">序号</view>
+              <view class="thh4 ">区域</view>
+              <view class="thh5 ">图片</view>
+            </view>
+            <block a:for="{{upLoadList}}" a:for-item="i" a:for-index="key" >
+              <view class="{{key % 2 == 0?'trr1 bg-g':'trr1'}}" >
+                <view class="tdd3 tdd">{{key+1}}</view>
+                <view class="tdd4 tdd">
+                  <picker onChange="bindObjPickerChange" data-id="{{key}}" value="{{arrIndex}}" range="{{districList}}" >
+                      <text type="default" size="mini" plain class="button-small1">{{i.district||'点击选择'}}</text>
+                  </picker>
+                </view>
+                <view class="tdd5 tdd">
+                  <view  a:if="{{i.picture.length>0}}" class="imgarea">
+                    <view a:for="{{i.picture}}" a:for-item="item" a:for-index="inde" >
+                      <image class="image" onTap="previewImage" data-img="{{i.picture}}"
+                      data-imgindex="{{inde}}" mode="aspectFill" src="{{imgSrc}}{{i.picture[inde]}}"/>
+                    </view>
+                  </view>
+                  <view a:else onTap="upLoadPic" data-id="{{key}}"><button type="default" size="mini" plain>点击上传图片</button></view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>    
+        
+        <!-- 以下方案是每条记录只在一个区域上传一张照片 -->
+        <!-- <scroll-view scroll-x="true">
+          <view class="table1 impeach" >
+          <view class="exchange">
+            <button size="mini" type="primary" onTap="addData">增加数据</button>
+            <button size="mini" type="primary" onTap="submitData">提交数据</button>
+          </view>
+            <view class="trr2 bg-w1">
+              <view class="thh3">序号</view>
+              <view class="thh4 ">区域</view>
+              <view class="thh5 ">问题</view>
+              <view class="thh5 ">要求完成日期</view>
+              <view class="thh5 ">图片</view>
+            </view>
+            <block a:for="{{upLoadList}}" a:for-item="i" a:for-index="key" >
+              <view class="{{key % 2 == 0?'trr1 bg-g':'trr1'}}" >
+                <view class="tdd3 tdd">{{key+1}}</view>
+                <view class="tdd4 tdd">
+                  <picker onChange="bindObjPickerChange" data-id="{{key}}" value="{{arrIndex}}" range="{{districList}}" >
+                      <text type="default" size="mini" plain class="button-small1">{{i.district||'点击选择'}}</text>
+                  </picker>
+                </view>
+                <view class="tdd5 tdd"> <textarea data-id="{{key}}" onInput="setproblem" class="problemarea" placeholder="请输入问题描述" value="{{i.problem}}"></textarea> </view>
+                <view class="tdd5 tdd" onTap="datePicker" data-id="{{key}}"> <text  type="default" size="mini" plain class="button-small1">{{i.first_req_date||'点击选择'}}</text> </view>
+                <view class="tdd5 tdd">
+                  <view  a:if="{{i.picture}}">
+                      <image class="image" onTap="previewImage" data-img="{{i.picture}}" mode="aspectFill" src="{{imgSrc}}{{i.picture}}"/>
+                  </view>
+                  <view a:else onTap="upLoadPic" data-id="{{key}}"><button type="default" size="mini" plain>点击上传图片</button></view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>     -->
+    </tab-content>
+    </block>
+</tabs>
+  <modal
+		show="{{modalOpened5}}"
+    showClose="{{true}}"
+    onButtonClick="onButtonClick5"
+    buttons="{{buttons5}}"
+	>
+		<view slot="header">审核处理图片</view>
+	</modal>
+	<!-- </scroll-view> -->
+</view>

@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="page-section-title">
+    <view class="top-title">
+      <text class="toptext">{{year}}</text >年<text class="toptext">{{lastMonth}}</text>月各区域6S检查情况一览表
+    </view>
+    <view >
+      <button type="default" class="page-body-button " type="primary" onTap="datePicker">选择月份</button>
+    </view>
+  </view>
+  
+  <view class="page-content">
+    <scroll-view scroll-x="true"  onScrollToUpper="upper" 
+    onScrollToLower="lower" onScroll="scroll" 
+    scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="tr bg-w ">
+          <view class="th1" id="section">区域名称</view>
+          <view class="th">责任人</view>
+          <view class="th1">关闭率%</view>
+          <view class="th">得分</view>
+          <view class="th" onTap="sortByRank">排名</view>
+          <view class="th"  >问题数</view>
+          <view class="th">关闭数</view>
+          <view class="th">待闭数</view>
+          <view class="th">人数</view>
+        </view>
+        <view a:for="{{totalList}}" a:for-item="i" class="tab-row">
+          <view onTap="onListItemClick" class="{{index % 2 == 0?'tr bg-g':'tr'}}" data-no="{{i.s6_no}}">
+            <view class="td1">{{i.dis_name}}</view>
+            <view class="td">{{i.principal}}</view>
+            <view class="{{i.closeRate<93 ?'yellow td1':'td1'}}">{{i.closeRate}}</view>
+            <view class="td">{{i.score}}</view>
+            <view class="td">{{i.rank}}</view>
+            <view class="td">{{i.tabtotal}}</view>
+            <view class="td">{{i.closed}}</view>
+            <view class="td">{{i.tabtotal-i.closed}}</view>
+            <view class="td">{{i.staff_qty}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+<!-- 激励记录 -->
+    <view class="page-section-title2">
+      <view class="top-title2">
+        <text class="toptext">{{year}}</text >年<text class="toptext">{{lastMonth}}</text>月6S精益管理活动排名激励记录
+      </view>
+      <!-- <view >
+        <button type="default" class="page-body-button2" type="warning" onTap="datePickerAward">选择月份</button>
+      </view> -->
+    </view>
+    <view class="page-content">
+        <view class="tr bg-w ">
+          <view class="th1" id="section">区域名称</view>
+          <view class="th">姓名</view>
+          <view class="th1">工号</view>
+          <view class="th3">激励金额</view>
+          <view class="th4" >排名</view>
+          
+        </view>
+         <view a:if="{{totalListAward.length>0}}"> 
+          <view a:for="{{totalListAward}}" a:for-item="i" class="tab-row2">
+            <view  class="{{index % 2 == 0?'tr bg-g':'tr'}}" >
+              <view class="td1">{{i.district}}</view>
+              <view class="td">{{i.p_name}}</view>
+              <view class="td1">{{i.job_number}}</view>
+              <view class="td3">{{i.amout}}</view>
+              <view class="td4">{{i.rank_degree}}</view>
+            </view>
+          </view>
+        </view> 
+        <view a:else>
+            此月份还没有激励记录
+        </view>
+    </view>
+</view>

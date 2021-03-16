@@ -1,0 +1,57 @@
+.page-section {
+  margin-bottom: 0rpx !important;
+}
+.image {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+.input{
+  font-size: 28rpx;
+  text-align: inherit;
+}
+.han{
+  margin-top: 14rpx;
+}
+.row-title {
+  flex: 1;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  font-size: 28rpx;
+  color: #000;
+  display: flex;
+}
+.button-small1{
+  min-width: 200rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+.row-extra {
+  flex-basis: initial;
+  font-size: 28rpx;
+  color: #888;
+}
+
+.row-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+.row-txt{
+  margin-left: 150rpx;
+}
+.switch-item{
+  margin:0 10rpx;
+  padding-right: 10rpx;
+  font-size: 28rpx;
+}

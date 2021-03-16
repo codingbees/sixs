@@ -1,0 +1,52 @@
+.page1{
+  margin: 0rpx;
+  /* background-color: black; */
+  /* width: 750rpx; */
+}
+.notice{
+  margin: 5rpx;
+  color: red;
+  /* padding:0rpx 10rpx 10rpx 10rpx; */
+}
+
+.fixed-wrap{
+  /* height: 116rpx; */
+  /* background-color: #eee;
+  position: fixed; */
+  /* top: 100; */
+
+  z-index: 2000;
+}
+.prizelist{
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 750rpx; */
+  /* flex-wrap: wrap; */
+  padding: 4rpx 22rpx;
+  background-color: #eee;
+  border-radius: 15rpx;
+  justify-content: space-between;
+}
+
+.prizeitem{
+  display: inline-block;
+  width: 300rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+  border-radius: 12rpx;
+}
+
+.prizeitem image{
+  width: 100%;
+  height: 350rpx;
+  border-radius: 12rpx;
+
+}
+
+.remark2{
+  
+  font-size: 30rpx;
+  color: rgb(65, 65, 175);
+}
+

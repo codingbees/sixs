@@ -1,0 +1,17 @@
+{
+  "defaultTitle": "合理化建议社区",
+  "usingComponents":{
+    "list": "mini-ali-ui/es/list/index",
+    "list-item": "mini-ali-ui/es/list/list-item/index",
+    "alphabet": "mini-ali-ui/es/list/alphabet/index",
+    "list-secondary": "mini-ali-ui/es/list/list-secondary/index",
+    "tag": "mini-ali-ui/es/tag/index",
+    "am-icon": "mini-ali-ui/es/am-icon/index",
+    "am-switch": "mini-ali-ui/es/am-switch/index",
+    "am-radio": "mini-ali-ui/es/am-radio/index",
+    "button": "mini-ali-ui/es/button/index" ,
+    "collapse": "mini-ali-ui/es/collapse/index",
+    "collapse-item": "mini-ali-ui/es/collapse/collapse-item/index",
+    "multi-liner": "mini-ali-ui/es/multi-liner/index"
+  }
+}

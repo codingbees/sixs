@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "我的信息",
+  "usingComponents":{
+    "card": "mini-ali-ui/es/card/index"
+  }
+}

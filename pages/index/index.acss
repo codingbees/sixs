@@ -1,0 +1,40 @@
+.main{
+  margin: 10rpx;
+}
+.row{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.father {
+  width: 750rpx;
+  height: 240rpx;
+  position: relative;
+  background-color: white;
+}
+ 
+.son {
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.txt{
+  height: 40rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #333;
+  /* font-weight: bold; */
+  margin: auto;
+  position: absolute;
+  background-color: white;
+}
+.titl{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-color: white;
+}

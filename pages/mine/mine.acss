@@ -1,0 +1,159 @@
+.page{
+  background-color: #fff;
+  padding: 10rpx !important;
+}
+.logo{
+  height: 300rpx;
+}
+.message{
+  background-color: #f5f5f5;
+  font-size: 28rpx;
+
+}
+.line{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.am-card-thumb{
+  border-style: none !important;
+}
+.table {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+  border: 0px solid darkgray;
+  background-color: #fff;
+  font-size: 14px;
+}
+.impeach{
+  width: 900rpx;
+}
+.record{
+  margin: 10rpx;
+}
+.tr {
+display: flex;
+width: 100%;
+justify-content: center;
+height: 1rem;
+align-items: center;
+}
+.tr1 {
+display: flex;
+width: 100%;
+justify-content: center;
+height: 2.8rem;
+align-items: center;
+}
+.tr2 {
+display: flex;
+width: 100%;
+justify-content: center;
+height: 1rem;
+align-items: center;
+}
+
+.td {
+width:20%;
+justify-content: center;
+text-align: center;
+}
+.td1 {
+width:10%;
+justify-content: center;
+text-align: center;
+}
+.td2 {
+width:30%;
+justify-content: center;
+text-align: center;
+}
+.td3{
+width:8%;
+justify-content: center;
+text-align: center;
+}
+.td4 {
+width:23%;
+justify-content: center;
+text-align: center;
+}
+.td5 {
+width:30%;
+justify-content: center;
+text-align: center;
+}
+.bg-w{
+background: snow;
+}
+
+.bg-g{
+background: #E6F3F9;
+}
+
+.th {
+width: 10%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.th1 {
+width: 10%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.th2 {
+width: 30%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.th3 {
+width: 8%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.th4 {
+width: 23%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.th5 {
+width: 30%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.exchange{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #3366FF;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+.picture{
+  width: 100%;
+  height: 260rpx;
+  margin: auto 5rpx;
+}

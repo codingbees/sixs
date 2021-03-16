@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "优秀建议及困难建议审核",
+  "usingComponents": {
+    "list": "mini-ali-ui/es/list/index",
+    "list-item": "mini-ali-ui/es/list/list-item/index",
+    "alphabet": "mini-ali-ui/es/list/alphabet/index",
+    "list-secondary": "mini-ali-ui/es/list/list-secondary/index",
+    "tag": "mini-ali-ui/es/tag/index",
+    "modal": "mini-ali-ui/es/modal/index"
+  }
+}

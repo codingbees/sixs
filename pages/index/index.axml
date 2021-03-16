@@ -1,0 +1,10 @@
+<view class="father">
+
+    <image class="son" mode="scaleToFill" src="http://110.186.68.166:18901/sixs/logo/6s_logo.jpg"/>
+</view>
+<view class="titl">
+    <text class="txt">6S管理系统</text>
+</view>
+<view class="main">
+    <grid onGridItemClick="onItemClick" columnNum="{{3}}" list="{{list5}}" />
+</view>

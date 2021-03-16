@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="page-section-title">
+    <view class="top-title">
+      <text class="toptext">{{year}}</text >年<text class="toptext">{{lastMonth}}</text>月白手套工程
+    </view>
+    <view class="btns">
+      <button type="primary" class="page-body-button " type="primary" onTap="datePicker">选择月份</button>
+      <button type="success" class="page-body-button " type="primary" onTap="upLoadData">上传数据</button>
+    </view>
+  </view>
+  
+  <view class="page-content">
+    <scroll-view scroll-x="true"  onScrollToUpper="upper" 
+    onScrollToLower="lower" onScroll="scroll" >
+          <view class="table " a:for="{{gloveList}}" a:for-item="list" >
+              <view class="table-title"> 
+              检查日期:{{list.date}}
+             </view>
+            <view class="table-item" >
+              <view class="item" a:for="{{list.list}}" a:for-item="item">
+                <view class="item-title" >{{item.dis_name}}</view>
+                <view  class="item-img" onTap="preview" data-img="{{item.picture}}">
+                  <image  class="img-glove" mode="scaleToFill"  src="{{imgSrc}}{{item.picture}}"/>
+                  <image class="img-status" mode="scaleToFill" 
+                  src="{{imgSrc}}{{item.check_status==0?'s0.jpg':item.check_status==1?'s1.jpg':'s2.jpg'}}"/>
+                </view>
+              </view>
+            </view>
+          </view>
+      </scroll-view>
+    </view>
+
+</view>

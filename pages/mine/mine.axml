@@ -1,0 +1,79 @@
+<view class="page">
+      <view>
+        <image class="logo" mode="aspectFit" src="http://110.186.68.166:18901/icons/logo.png"/>
+      </view>
+      <view>
+          <button size="default" type="primary" onTap="sendMSG">发信息</button>
+      </view>
+    <view class="message" >
+    <view class="line">
+      姓名：{{username}} 
+    </view>
+    <view class="line">
+      总积分：{{myScores.scores[0].total_scores==null?'0':myScores.scores[0].total_scores}}
+    </view>
+    <view class="line">
+      已使用的分数：{{myScores.used_score[0].total==null?'0':myScores.used_score[0].total}}
+    </view>
+    <view class="line">
+      剩余分数：{{myScores.scores[0].total_scores-myScores.used_score[0].total}}
+    </view>
+    <view class="line">
+      有效检举数：{{myScores.scores[0].total_items}}
+    </view>
+    </view>
+    </br>
+  <view class="table" a:if="{{myExchangeList.length!=0}}">
+  <view class="exchange">
+    奖品兑换记录：
+  </view>
+    <view class="tr bg-w">
+      <view class="th1">序号</view>
+      <view class="th2">兑换日期</view>
+      <view class="th2 ">奖品名称</view>
+      <view class="th ">分值</view>
+      <view class="th2 ">申请人</view>
+    </view>
+    <block a:for="{{myExchangeList}}" >
+      <view class="{{index % 2 == 0?'tr bg-g':'tr'}}" >
+        <view class="td1">{{index+1}}</view>
+        <view class="td2">{{item.apply_date}}</view>
+        <view class="td2">{{item.prize_name}}</view>
+        <view class="td">{{item.score}}</view>
+       <view class="td2">{{item.apply_username}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="exchange" a:else >
+    您的奖品兑换记录为空
+  </view>
+  </br>
+  <scroll-view scroll-x="true">
+  <view class="table impeach" a:if="{{myImpeachList.length!=0}}">
+  <view class="exchange">
+    检举记录：
+  </view>
+    <view class="tr2 bg-w">
+      <view class="th3">序号</view>
+      <view class="th4">日期</view>
+      <view class="th4 ">问题</view>
+      <view class="th5 ">图片</view>
+      <view class="th3 ">状态</view>
+      <view class="th3 ">分值</view>
+    </view>
+    <block a:for="{{myImpeachList}}" a:for-item="i" a:for-index="key" >
+      <view class="{{key % 2 == 0?'tr1 bg-g':'tr1'}}" >
+        <view class="td3">{{key+1}}</view>
+        <view class="td4">{{i.date}}</view>
+        <view class="td4">{{i.problem}}</view>
+        <view onTap="preview" data-img="{{i.picture}}" class="td5"><image class="picture" mode="scaleToFill" src="{{imgSrc}}{{i.picture}}"/></view>
+       <view class="td3">{{i.check_status==0?'未审核':i.check_status==1?'审核通过':'已拒绝'}}</view>
+       <view class="td3">{{i.score}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="exchange" a:else >
+    您的检举记录为空
+  </view>
+</scroll-view>
+</view>

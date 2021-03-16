@@ -1,0 +1,260 @@
+.dyt-list {
+  margin-top: 0;
+}
+.dyt-list .am-list-item-thumb {
+  border-radius: 5px;
+}
+.dyt-list .am-list-briefX {
+  color: #909090;
+  font-size: 14px;
+}
+
+.am-list-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.am-list-item .a-icon-success_no_circle {
+  fill: #1677ff;
+}
+.am-list-item .a-shared-checkbox {
+  border: 0;
+}
+
+.listempty{
+  text-align: center;
+  color: #b2b2b2;
+  font-size: 18px;
+  margin: 30rpx 30rpx;
+}
+
+.pageall{
+  font-size: 28rpx;
+}
+.table {
+border: 0px solid darkgray;
+ font-size: 28rpx;
+}
+.tr {
+display: flex;
+width: 100%;
+justify-content: center;
+height: 2.2rem;
+align-items: center;
+}
+
+.td {
+width:20%;
+justify-content: center;
+align-items: center;
+padding: auto;
+text-align: center;
+height: 2.2rem;
+display: flex;
+}
+.bg-w{
+position: fixed;
+height: auto;
+}
+.view-top{
+  padding-top: 1rem;
+}
+.bg-g{
+background: #E6F3F9;
+}
+
+.th {
+width: 20%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.td1,.th1{
+  width: 10%;
+}
+.td2,.th2{
+  width: 30%;
+}
+.td3,.th3{
+  width: 20%;
+}
+.td4,.th4{
+  width: 40%;
+}
+
+
+.pics {
+  background-color: #e1e1e1;
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  margin: 9rpx;
+  border-radius: 5rpx;
+  font-size: 32rpx;
+  color: blue;
+  padding: 6rpx;
+}
+
+.table1 {
+  margin-top: 0rpx;
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+  border: 0px solid darkgray;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.record{
+  margin: 10rpx;
+}
+.trr {
+display: flex;
+width: 100%;
+justify-content: center;
+height: 1rem;
+align-items: center;
+}
+.trr1 {
+display: flex;
+width: 750rpx;
+justify-content: center;
+height: 3.2rem;
+align-items: center;
+}
+.trr2 {
+display: flex;
+width: 750rpx;
+justify-content: center;
+height: 1rem;
+align-items: center;
+
+}
+
+.tdd {
+justify-content: center;
+align-items: center;
+padding: auto;
+text-align: center;
+height: 3.2rem;
+display: flex;
+}
+.tdd1 {
+width:10%;
+justify-content: center;
+text-align: center;
+}
+.tdd2 {
+width:30%;
+justify-content: center;
+text-align: center;
+}
+.tdd3{
+width:8%;
+justify-content: center;
+text-align: center;
+}
+.tdd4 {
+width:19%;
+justify-content: center;
+text-align: center;
+}
+.tdd5 {
+ width:73%; 
+justify-content: center;
+text-align: center;
+}
+.bg-w1{
+background: snow;
+}
+
+
+.thh {
+width: 10%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.thh1 {
+width: 10%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.thh2 {
+width: 30%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.thh3 {
+width: 8%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.thh4 {
+width: 19%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.thh5 {
+width: 73%;
+justify-content: center;
+background: #3366FF;
+color: #fff;
+display: flex;
+height: 1rem;
+align-items: center;
+}
+.exchange{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40rpx;
+  
+}
+.picture{
+  width: 100%;
+  height: 260rpx;
+  margin: auto 5rpx;
+}
+.problemarea{
+  height:100%;
+width:100%;
+display:inline-block;
+font-size: 28rpx;
+}
+.imgarea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: visible;
+  width: 100%;
+  height:100%;
+}
+.image{
+  width: 100rpx;
+  height:100rpx; 
+  display: inline-block;
+  margin: 2rpx;
+
+}

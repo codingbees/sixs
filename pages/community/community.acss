@@ -1,0 +1,144 @@
+
+.pageall{
+  font-size: 28rpx;
+  padding: 0 10rpx;
+  background-color: #eee;
+}
+.area{
+  background-color: #fff;
+  margin-bottom:20rpx;
+  border-radius: 15rpx;
+}
+.username{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.nocomment,.haveComment{
+  padding: 5rpx 0;
+}
+.haveCommentContent{
+  overflow-y:visible
+}
+.nocomment{
+  font-size: 24rpx;
+  color: #333;
+  margin: 5rpx;
+}
+.haveComment{
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+}
+.haveCommentIcon{
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+}
+.haveCommentTotal{
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+ .haveCommentTitle{
+  color: #000080;
+  font-weight: bold;
+}
+
+.username view{
+}
+.usertitle{
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  padding: 10rpx 0 10rpx 10rpx;
+}
+.iconimg{
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
+  /* padding-top: 10rpx; */
+  display: inline-block; 
+  vertical-align: middle;
+  justify-content: center;
+  margin: auto 10rpx auto 40rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+.problemtitile,.proposaltitle,.atferimprovetitle{
+  color: #000080;
+  font-size: 30rpx;
+  /* display: inline-block; */
+  width: 100rpx;
+  justify-content: center;
+}
+.problemarea,.proposalarea,.atferimprovearea{
+  display: flex;
+  flex-direction: column;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 5rpx 5rpx;
+}
+.problemcontent,.proposalcontent,.atferimprovecontent{
+  height: 100rpx;
+  width: 590rpx;
+  border: 1px solid #aaaaaa;
+  border-radius: 8rpx;
+  overflow: scroll;
+}
+.problemimg,.proposalimg,.atferimproveimg{
+  display: inline-block; 
+  vertical-align: middle;
+}
+.footer,.commentarea{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.like{
+  padding-right: 30rpx;
+  display: inline-block;
+}
+.likeandcomment{
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+.ipt{
+  border: solid 1px #c8c8c8;
+  border-radius:10rpx;
+  width: 100%;
+  font-size: 28rpx;
+  background-color: white;
+}
+.btn{
+  display: flex;
+  justify-content:flex-end; 
+}
+.am-button{
+  height:46rpx;
+  font-size: 30rpx;
+  line-height: 38rpx;
+  margin: 6rpx 20rpx;
+  padding: 6rpx;
+}
+.commentarea{
+  padding: 0 ;
+  background-color: #f8f8f8;
+}
+.problem,.proposal,.atferimprove{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.am-collapse-item-title{
+  padding: 0rpx;
+  margin:0rpx;
+  justify-content: center;
+}
+.am-collapse-item-title-text-wrapper{
+  font-size: 28rpx;
+  padding-right: 1rpx;
+}

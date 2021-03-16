@@ -1,0 +1,51 @@
+<view class="page">
+  <form onSubmit="onSubmit" onReset="onReset" enctype="multipart/form-data">
+    
+    <input name="p_name" class="input" style="display:none" value="{{p_name}}" />
+    <input name="p_job_number" class="input" style="display:none" value="{{p_job_number}}" />
+    <input name="picture" class="input" style="display:none" value="{{picture}}" />
+    
+    <view class="page-section">
+      <picker onChange="disChange" name="district" value="{{indexDis}}" range="{{arrayDis}}">
+        <view class="row">
+          <view class="row-title">问题所在区域：</view>
+          <view class="row-extra">{{arrayDis[indexDis]}}</view>
+        </view>
+      </picker>
+    </view>
+    <view class="form-line" />
+    <view class="page-section">
+      <view class="page-section-title" >问题描述：</view>
+      <view class="page-section-demo">
+        <textarea maxlength="500"  name="problem" value="{{problem}}" auto-height placeholder="请输入问题描述" />
+      </view>
+    </view>
+       <view class="form-line" />
+    <view class="page-section"> 
+      <view class="form-row">
+        <view class="form-row-label">
+          <button type="default" size="mini" onTap="selectFile" plain>问题图片</button>
+        </view>
+      </view>
+      <view class="form-row" a:if="{{picture}}">
+        <view class="img">
+           <image mode="scaleToFill" src="{{imgSrc}}{{picture}}" class="pics"/>
+      </view>
+      
+    </view>
+    <view class="form-row" a:else >
+        <view class="img">
+           <view class="pics" >点击上方按钮上传图片</view>
+      </view>
+        </view>
+      <view class="form-line" />
+    <view class="page-section">
+      <view class="btns">
+        <button type="ghost" size="mini" form-type="reset">清除内容</button>
+        <button type="primary" size="mini" formType="submit">提交问题</button>
+      </view>
+    </view>
+    
+  </form>
+  
+</view>

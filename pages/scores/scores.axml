@@ -1,0 +1,33 @@
+<view class="page1">
+<view class="fixed-wrap">
+  
+</view>
+<view class="prize">
+<view  class="prizelist"  >
+  <view class="prizeitem" onTap="toExchange" a:for={{prize}}  index="{{item.id}}"  data-attr="{{item.id}}" >
+    <view>
+      <image class="prizeimg"   src="{{imgSrc}}{{item.prize_pic_name}}"/>
+    </view>
+    <view class="remark1">
+       {{index+1}}.{{item.prize_name_cn}}
+    </view>
+    <view class="remark2">
+      所需积分：{{item.cost_score}}
+    </view>
+  </view>
+  
+  </view>
+
+   <modal
+		show="{{modalOpened5}}"
+    showClose="{{false}}"
+    onButtonClick="onButtonClick5"
+    buttons="{{buttons5}}"
+	>
+		<view slot="header">兑换奖品</view>
+		<view >您确定要使用"{{selectScore}}"分,</view>
+    <view >来兑换一份"{{selectPrize}}"吗？</view>
+    
+	</modal>
+</view>
+</view>

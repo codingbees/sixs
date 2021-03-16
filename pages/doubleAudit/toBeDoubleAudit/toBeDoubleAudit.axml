@@ -1,0 +1,83 @@
+<view class="dyt-list" style="position: relative;">
+
+      
+          <form onSubmit="onSubmit" onReset="onReset" enctype="multipart/form-data">
+    <view class="page-section">
+      <view class="row">
+        <view class="row-title">发起时间 : {{getCheckItem.create_time}}</view>
+      </view>
+      <view class="form-line" />
+      <view class="row">
+        <view class="row-title">发起人 : {{getCheckItem.p_name}}</view>
+      </view>
+      <view class="form-line" />
+      <view class="row">
+        <view class="row-title">区域 : {{getCheckItem.district}}</view>
+      </view>
+      <view class="form-line" />
+      <view class="row">
+        <view class="row-title">问题描述 : {{getCheckItem.problem}}</view>
+      </view>
+      
+      <view class="form-line" />
+      <view class="page-section">
+        <view class="row">
+          <view class="row-title">问题图片 :</view>
+        </view>
+        <view class="row">
+          <view class="page-section-demo"  >
+            <image class="image" onTap="previewImage" data-img="{{getCheckItem.picture}}" mode="scaleToFill" src="{{imgSrc}}{{getCheckItem.picture}}"  />
+          </view>
+        </view>
+        <view class="form-line" />
+        
+        <view class="row">
+          <view class="row-title">
+            <button type="default" size="mini" onTap="selectDate" plain class="button-small1">要求完成日期</button></view>
+          <view class="form-row-content">
+            <input name="actural_finish_date" class="input" disabled="true" value="{{requireFinishDate}}" placeholder="请选择（必填）"/>
+          </view>
+        </view>
+        <view class="form-line" />
+          <view class="page-section-demo switch-list">
+            <view class="switch-item">
+              是否同意
+              <radio-group class="radio-group" onChange="radioChange" name="lib">
+                <label class="radio" >
+                  <radio value="2" checked  />
+                  <text class="radio-text">拒绝</text>
+                </label>
+                <label class="radio" >
+                  <radio value="1"   />
+                  <text class="radio-text">同意</text>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+        <view class="form-line" />
+        <picker onChange="bindObjPickerChange" value="{{arrIndex}}" range="{{objectArray}}" >
+          <view class="row">
+            <button type="default" size="mini" plain class="button-small1">分值</button>
+            <view class="row-extra row-txt">当前选择：{{objectArray[arrIndex]}}</view>
+            <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+          </view>
+        </picker>
+        <view class="page-section-btns">
+            <button type="default" size="mini" class="button-small1" formType="reset">重置</button>
+            <button type="primary" size="mini" class="button-small1" onTap="submit">提交</button>
+        </view>
+      </view>
+    </form>
+      
+  
+    <modal
+        show="{{modalOpened5}}"
+        showClose="{{false}}"
+        onButtonClick="onButtonClick5"
+        buttons="{{buttons5}}"
+      >
+        <view slot="header">确定提交</view>
+        你确定要“ {{check_tatus==1?'同意':'拒绝'}} ”这项检举且分值为“ {{objectArray[arrIndex]}} ”吗？
+      </modal>
+  </view>
+</view>

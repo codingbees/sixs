@@ -1,0 +1,140 @@
+page {
+  background-color: #F7F7F7;
+  border: 1px solid rgba(0,0,0,0);
+  box-sizing: border-box;
+}
+
+.page {
+  font-size: 24rpx;
+  padding: 32rpx;
+  flex: 1;
+}
+
+.page-description {
+  margin-bottom: 32rpx;
+}
+
+.page-section {
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.page-section-title {
+  font-size: 32rpx;
+  padding: 6rpx 16rpx;
+}
+
+.page-section-demo {
+  padding: 12rpx;
+}
+
+.page-section-btns {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-section-btns > view {
+  flex: 1;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #49a9ee;
+}
+.page-section-btns > view + view {
+  border-left: 1px solid #ddd;
+}
+
+button {
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+
+.bc_blue {
+  background-color: #49A9EE;
+}
+
+.bc_red {
+  background-color: #F04134;
+}
+
+.bc_yellow {
+  background-color: #FFBF00;
+}
+
+.bc_green {
+  background-color: #00A854;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  align-items: center;
+}
+
+.form-row-label {
+  width: 180rpx;
+  font-size: 34rpx;
+  margin-right: 10rpx;
+  text-align: left;
+  color: #000;
+}
+
+.form-row-content {
+  flex: 1;
+  font-size: 34rpx;
+}
+
+.form-line {
+  height: 1px;
+  background-color: #ddd;
+  margin-left: 30rpx;
+}
+
+.row-arrow{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  padding: 1rpx 8rpx;
+}
+
+.row{
+  padding: 15rpx 20rpx 0rpx 20rpx;
+}
+
+.inputclass{
+  border-bottom:1px solid #1A91E8;width:98%;padding-left: 22rpx;box-sizing: border-box;font-size: 12px;
+}
+
+.textareaclass{
+  padding-left: 22rpx;box-sizing: border-box;
+}
+
+.radio-group{
+  padding: 15rpx 20rpx 0rpx 20rpx;
+  white-space: normal;
+}
+
+.radio{
+  padding: 15rpx 20rpx 5rpx 0rpx;
+}
+
+.checkbox{
+  padding: 15rpx 20rpx 0rpx 20rpx;
+}
+
+.color1A91E8{
+  color: #1A91E8;
+}
+
+.imgadd{
+  width:30rpx;height:30rpx; float: left;margin-left: 25rpx;
+}
+
+.buttonclass{
+  width:90%;height: 50rpx;font-size: 12px;border: #49A9EE solid 1px; border-radius: 5rpx;text-align: center;line-height: 50rpx;margin-top: 20rpx;
+}

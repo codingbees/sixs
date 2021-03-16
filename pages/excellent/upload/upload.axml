@@ -1,0 +1,36 @@
+<view class="page">
+
+  <view class="page-content">
+    <scroll-view scroll-x="true"   scroll-into-view="{{toView}}" >
+        <view class="tr bg-w ">
+          <view class="th">序号</view>
+          <view class="th th1" id="section">区域名称</view>
+          <view class="th th3">状态</view>
+          <view class="th th2">手套图片</view>
+
+        </view>
+        <view class="tab-row">
+          <view a:for="{{totalList}}" a:for-item="i" >
+            <view  class="{{index % 2 == 0?'tr bg-g':'tr'}}" >
+              <view class="td ">{{index+1}}</view>
+              <view class="td td1">{{totalList[index]}}</view>
+              <view class="td td3">
+                <picker onChange="bindObjPickerChange" data-item="{{index}}" value="{{arrIndex[index]}}" range="{{objectArray}}" range-key="name">
+                <view >
+                  <view class="row-extra">{{objectArray[arrIndex[index]].name}}</view>
+                 
+                </view>
+              </picker>
+              </view>
+              <view class="td td2" a:if="{{arrImg[index]}}">
+                  <image class="image" onTap="previewImage" data-img="{{arrImg[index]}}" mode="aspectFill" src="{{imgSrc}}{{arrImg[index]}}"/>
+              </view>
+              <view class="td td2" a:else onTap="upLoadPic" data-item="{{index}}"><button type="default" size="mini" plain>点击上传图片</button></view>
+              
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  
+<view >

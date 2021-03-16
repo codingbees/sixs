@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kpi/kpi",
+    "pages/handle/handle",
+    "pages/scores/scores",
+    "pages/excellent/excellent",
+    "pages/excellent/upload/upload",
+    "pages/impeach/impeach",
+    "pages/doubleAudit/doubleAudit",
+    "pages/doubleAudit/toBeDoubleAudit/toBeDoubleAudit",
+    "pages/mine/mine",
+    "pages/community/community"
+
+  ],
+  "window": {
+    "defaultTitle": "6S管理系统"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页",
+        "icon": "./img/homeg.png",
+        "activeIcon": "./img/home.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "name": "社区",
+        "icon": "./img/communityg.png",
+        "activeIcon": "./img/community.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "name": "我的",
+        "icon": "./img/mineg.png",
+        "activeIcon": "./img/mine.png"
+      }
+    ]
+  }
+}
